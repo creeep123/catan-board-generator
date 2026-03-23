@@ -1,0 +1,225 @@
+{
+  "page": {
+    "show_sections": [
+      "hero",
+      "introduce",
+      "benefits",
+      "features",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "生成随机卡坦岛棋盘",
+        "highlight_text": "随机棋盘",
+        "description": "为卡坦岛创建独特的棋盘布局。支持经典版和扩展版，提供自定义规则和可视化六边形地图。",
+        "announcement": {
+          "badge": "全新",
+          "title": "🎲 免费棋盘生成器",
+          "url": "/#features"
+        },
+        "tip": "🎁 完美的游戏之夜和锦标赛工具",
+        "buttons": [
+          {
+            "title": "生成棋盘",
+            "icon": "Zap",
+            "url": "/#features",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "了解更多",
+            "icon": "BookOpenText",
+            "url": "/#features",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "https://picsum.photos/1200/800?random=1",
+          "alt": "卡坦岛棋盘生成器",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      "introduce": {
+        "block": "features-list",
+        "id": "introduce",
+        "title": "什么是卡坦岛棋盘生成器",
+        "label": "关于",
+        "description": "一个强大的在线工具，为卡坦岛生成随机棋盘布局，支持经典版和扩展版，提供可自定义的规则。",
+        "image": {
+          "src": "https://picsum.photos/800/600?random=2",
+          "alt": "关于卡坦岛棋盘生成器"
+        },
+        "items": [
+          {
+            "title": "随机棋盘生成",
+            "description": "生成独特且公平的棋盘布局，确保资源和数字的合理分布，实现平衡的游戏体验。",
+            "icon": "RiShuffleFill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=3",
+              "alt": "随机生成"
+            }
+          },
+          {
+            "title": "经典版与扩展版支持",
+            "description": "支持标准卡坦岛和扩展包，提供不同的棋盘配置和玩家数量选项。",
+            "icon": "RiGamepadFill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=4",
+              "alt": "游戏版本"
+            }
+          },
+          {
+            "title": "自定义规则",
+            "description": "配置生成规则，如允许6和8相邻、相同资源相邻等更多自定义选项。",
+            "icon": "RiSettings3Fill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=5",
+              "alt": "自定义规则"
+            }
+          },
+          {
+            "title": "可视化六边形地图",
+            "description": "美观的棋盘可视化展示，清晰的六边形地块、资源和数字标记。",
+            "icon": "RiMapPinFill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=6",
+              "alt": "可视化地图"
+            }
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "benefits": {
+        "block": "features-accordion",
+        "id": "benefits",
+        "title": "为什么使用卡坦岛棋盘生成器",
+        "label": "优势",
+        "description": "通过公平、平衡和刺激的棋盘布局，提升您的卡坦岛游戏体验。",
+        "items": [
+          {
+            "title": "平衡的资源分布",
+            "description": "我们的算法确保资源和数字的公平分布，打造竞争激烈且有趣的游戏体验。",
+            "icon": "RiScales3Fill",
+            "image": {
+              "src": "https://picsum.photos/800/600?random=7",
+              "alt": "平衡分布"
+            }
+          },
+          {
+            "title": "无穷变化",
+            "description": "永不重复的棋盘布局。生成无限独特的布局，让您的游戏始终保持新鲜感。",
+            "icon": "RiInfiniteFill",
+            "image": {
+              "src": "https://picsum.photos/800/600?random=8",
+              "alt": "无穷变化"
+            }
+          },
+          {
+            "title": "快速简单",
+            "description": "几秒钟即可生成新棋盘。无需手动设置 - 只需点击即可使用自定义布局开始游戏。",
+            "icon": "RiTimerFlashFill",
+            "image": {
+              "src": "https://picsum.photos/800/600?random=9",
+              "alt": "快速设置"
+            }
+          }
+        ]
+      },
+      "features": {
+        "id": "features",
+        "title": "核心功能",
+        "description": "为您创建完美卡坦岛棋盘所需的一切功能。",
+        "items": [
+          {
+            "title": "多种游戏模式",
+            "description": "支持经典版3-4人和扩展版5-6人游戏，提供不同的棋盘配置。",
+            "icon": "RiGameFill"
+          },
+          {
+            "title": "自定义生成规则",
+            "description": "控制6和8是否可以相邻、2和12是否可以相邻、相同数字是否可以相邻、相同资源是否可以相邻。",
+            "icon": "RiSettings4Fill"
+          },
+          {
+            "title": "可视化棋盘显示",
+            "description": "美观的六边形可视化展示，清晰显示资源、数字和港口位置。",
+            "icon": "RiEyeFill"
+          },
+          {
+            "title": "导出和分享",
+            "description": "导出您的棋盘配置并与朋友分享，轻松设置游戏。",
+            "icon": "RiShareFill"
+          },
+          {
+            "title": "公平分布算法",
+            "description": "智能算法确保所有地块上的资源产出和数字布局平衡。",
+            "icon": "RiMagicFill"
+          },
+          {
+            "title": "即时生成",
+            "description": "即时生成新棋盘，无需等待。完美的游戏之夜快速设置工具。",
+            "icon": "RiFlashlightFill"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "常见问题",
+        "description": "了解更多关于卡坦岛棋盘生成器的信息和使用方法。",
+        "items": [
+          {
+            "question": "什么是卡坦岛棋盘生成器？",
+            "answer": "卡坦岛棋盘生成器是一个在线工具，为卡坦岛创建随机棋盘布局。它支持经典版和扩展版，让您能够为游戏生成独特且平衡的棋盘。"
+          },
+          {
+            "question": "生成算法如何工作？",
+            "answer": "我们的算法在六边形网格上随机放置资源和数字标记，同时遵循您的自定义规则。它确保公平分布，并可配置允许或限制某些地块相邻。"
+          },
+          {
+            "question": "支持哪些游戏版本？",
+            "answer": "我们支持经典卡坦岛版本（3-4人）和扩展版本（5-6人）。每个版本都有自己的棋盘配置和布局选项。"
+          },
+          {
+            "question": "我可以自定义生成规则吗？",
+            "answer": "可以！您可以配置多个规则，包括6和8点是否可以相邻、2和12是否可以相邻、相同数字是否可以相邻，以及相同资源类型是否可以相邻。"
+          },
+          {
+            "question": "棋盘生成是否公平且平衡？",
+            "answer": "我们的算法旨在创建具有公平资源分布的平衡棋盘。但是，您也可以调整规则以创建更具挑战性或不平衡的布局（如果需要）。"
+          },
+          {
+            "question": "我可以保存和分享生成的棋盘吗？",
+            "answer": "可以！您可以导出棋盘配置并与朋友分享。这样可以轻松提前准备游戏或重玩有趣的布局。"
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "准备生成您的卡坦岛棋盘了吗？",
+        "description": "开始为您的下一个游戏之夜创建独特而刺激的棋盘布局。",
+        "buttons": [
+          {
+            "title": "立即生成",
+            "url": "/#features",
+            "target": "_self",
+            "icon": "Zap"
+          },
+          {
+            "title": "了解更多",
+            "url": "/#features",
+            "target": "_self",
+            "variant": "outline",
+            "icon": "BookOpenText"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

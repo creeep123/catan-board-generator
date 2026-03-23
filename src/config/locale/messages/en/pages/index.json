@@ -1,0 +1,225 @@
+{
+  "page": {
+    "show_sections": [
+      "hero",
+      "introduce",
+      "benefits",
+      "features",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Generate Random Catan Boards",
+        "highlight_text": "Random Catan Boards",
+        "description": "Create unique board layouts for Settlers of Catan with our powerful generator. Support for both Classic and Expansion versions with custom rules and visual hex-based maps.",
+        "announcement": {
+          "badge": "New",
+          "title": "🎲 Free Board Generator",
+          "url": "/#features"
+        },
+        "tip": "🎁 Perfect for game nights and tournaments",
+        "buttons": [
+          {
+            "title": "Generate Board",
+            "icon": "Zap",
+            "url": "/#features",
+            "target": "_self",
+            "variant": "default"
+          },
+          {
+            "title": "Learn More",
+            "icon": "BookOpenText",
+            "url": "/#features",
+            "target": "_self",
+            "variant": "outline"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false,
+        "image": {
+          "src": "https://picsum.photos/1200/800?random=1",
+          "alt": "Catan Board Generator",
+          "width": 1200,
+          "height": 800
+        }
+      },
+      "introduce": {
+        "block": "features-list",
+        "id": "introduce",
+        "title": "What is Catan Board Generator",
+        "label": "About",
+        "description": "A powerful online tool that generates random board layouts for Settlers of Catan, supporting both Classic and Expansion versions with customizable rules.",
+        "image": {
+          "src": "https://picsum.photos/800/600?random=2",
+          "alt": "About Catan Board Generator"
+        },
+        "items": [
+          {
+            "title": "Random Board Generation",
+            "description": "Generate unique and fair board layouts with perfect resource and number distribution for balanced gameplay.",
+            "icon": "RiShuffleFill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=3",
+              "alt": "Random Generation"
+            }
+          },
+          {
+            "title": "Classic & Expansion Support",
+            "description": "Support for both standard Catan and Expansion packs with different board configurations and player counts.",
+            "icon": "RiGamepadFill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=4",
+              "alt": "Game Versions"
+            }
+          },
+          {
+            "title": "Custom Rules",
+            "description": "Configure generation rules like allowing 6&8 to touch, same resources touching, and more custom options.",
+            "icon": "RiSettings3Fill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=5",
+              "alt": "Custom Rules"
+            }
+          },
+          {
+            "title": "Visual Hex Maps",
+            "description": "Beautiful visual representation of your generated board with clear hex tiles, resources, and number tokens.",
+            "icon": "RiMapPinFill",
+            "image": {
+              "src": "https://picsum.photos/400/300?random=6",
+              "alt": "Visual Maps"
+            }
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "benefits": {
+        "block": "features-accordion",
+        "id": "benefits",
+        "title": "Why Use Catan Board Generator",
+        "label": "Benefits",
+        "description": "Enhance your Catan gaming experience with fair, balanced, and exciting board layouts.",
+        "items": [
+          {
+            "title": "Balanced Resource Distribution",
+            "description": "Our algorithm ensures fair distribution of resources and numbers for competitive and enjoyable gameplay.",
+            "icon": "RiScales3Fill",
+            "image": {
+              "src": "https://picsum.photos/800/600?random=7",
+              "alt": "Balanced Distribution"
+            }
+          },
+          {
+            "title": "Endless Variety",
+            "description": "Never play the same board twice. Generate infinite unique layouts to keep your games fresh and exciting.",
+            "icon": "RiInfiniteFill",
+            "image": {
+              "src": "https://picsum.photos/800/600?random=8",
+              "alt": "Endless Variety"
+            }
+          },
+          {
+            "title": "Quick & Easy",
+            "description": "Generate a new board in seconds. No manual setup needed - just click and play with your customized layout.",
+            "icon": "RiTimerFlashFill",
+            "image": {
+              "src": "https://picsum.photos/800/600?random=9",
+              "alt": "Quick Setup"
+            }
+          }
+        ]
+      },
+      "features": {
+        "id": "features",
+        "title": "Key Features",
+        "description": "Everything you need to create perfect Catan boards for your games.",
+        "items": [
+          {
+            "title": "Multiple Game Modes",
+            "description": "Support for Classic 3-4 players and Expansion 5-6 players with different board configurations.",
+            "icon": "RiGameFill"
+          },
+          {
+            "title": "Custom Generation Rules",
+            "description": "Control whether 6&8 can touch, 2&12 can touch, same numbers can touch, and same resources can touch.",
+            "icon": "RiSettings4Fill"
+          },
+          {
+            "title": "Visual Board Display",
+            "description": "Beautiful hex-based visual representation showing resources, numbers, and port locations.",
+            "icon": "RiEyeFill"
+          },
+          {
+            "title": "Export & Share",
+            "description": "Export your board configuration and share it with friends for easy game setup.",
+            "icon": "RiShareFill"
+          },
+          {
+            "title": "Fair Distribution Algorithm",
+            "description": "Smart algorithm ensures balanced resource production and number placement across all tiles.",
+            "icon": "RiMagicFill"
+          },
+          {
+            "title": "Instant Generation",
+            "description": "Generate new boards instantly with no waiting. Perfect for quick game night setups.",
+            "icon": "RiFlashlightFill"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Frequently Asked Questions",
+        "description": "Learn more about Catan Board Generator and how it works.",
+        "items": [
+          {
+            "question": "What is Catan Board Generator?",
+            "answer": "Catan Board Generator is an online tool that creates random board layouts for Settlers of Catan. It supports both Classic and Expansion versions, allowing you to generate unique and balanced boards for your games."
+          },
+          {
+            "question": "How does the generation algorithm work?",
+            "answer": "Our algorithm randomly places resources and number tokens on the hex grid while respecting your custom rules. It ensures fair distribution and can be configured to allow or restrict certain tile adjacencies."
+          },
+          {
+            "question": "What game versions are supported?",
+            "answer": "We support both the Classic Catan version (3-4 players) and the Expansion version (5-6 players). Each version has its own board configuration and layout options."
+          },
+          {
+            "question": "Can I customize the generation rules?",
+            "answer": "Yes! You can configure multiple rules including whether 6&8 dots can touch, whether 2&12 can touch, whether same numbers can be adjacent, and whether same resource types can touch."
+          },
+          {
+            "question": "Is the board generation fair and balanced?",
+            "answer": "Our algorithm is designed to create balanced boards with fair resource distribution. However, you can also adjust the rules to create more challenging or unbalanced layouts if desired."
+          },
+          {
+            "question": "Can I save and share generated boards?",
+            "answer": "Yes! You can export your board configuration and share the setup with friends. This makes it easy to prepare games in advance or replay interesting layouts."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Ready to Generate Your Catan Board?",
+        "description": "Start creating unique and exciting board layouts for your next game night.",
+        "buttons": [
+          {
+            "title": "Generate Now",
+            "url": "/#features",
+            "target": "_self",
+            "icon": "Zap"
+          },
+          {
+            "title": "Learn More",
+            "url": "/#features",
+            "target": "_self",
+            "variant": "outline",
+            "icon": "BookOpenText"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

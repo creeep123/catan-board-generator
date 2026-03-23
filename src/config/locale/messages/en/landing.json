@@ -1,0 +1,86 @@
+{
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "Catan Board Generator",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Catan Board Generator",
+        "width": 100,
+        "height": 100
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Features",
+          "url": "/#features",
+          "icon": "Sparkles"
+        }
+      ]
+    },
+    "buttons": [],
+    "user_nav": {
+      "items": []
+    },
+    "show_sign": false,
+    "show_theme": true,
+    "show_locale": true,
+    "topbanner": {
+      "text": "Generate random Catan boards for your game nights!"
+    }
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {
+      "title": "Catan Board Generator",
+      "description": "Generate random board layouts for Settlers of Catan. Support for Classic and Expansion versions with custom rules and visual hex-based maps.",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Catan Board Generator",
+        "width": 1024,
+        "height": 1024
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Product",
+          "children": [
+            {
+              "title": "Features",
+              "url": "/#features",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Email",
+          "icon": "Mail",
+          "url": "mailto:support@catanboardgenerator.online",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Service",
+          "url": "/terms-of-service"
+        }
+      ]
+    },
+    "show_theme": true,
+    "show_locale": true
+  }
+}
