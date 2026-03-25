@@ -2,6 +2,8 @@
   "page": {
     "show_sections": [
       "hero",
+      "catan-generator",
+      "catan-examples",
       "introduce",
       "benefits",
       "features",
@@ -44,6 +46,14 @@
           "width": 1200,
           "height": 800
         }
+      },
+      "catan-generator": {
+        "block": "catan-generator",
+        "id": "catan-generator"
+      },
+      "catan-examples": {
+        "block": "catan-examples",
+        "id": "catan-examples"
       },
       "introduce": {
         "block": "features-list",

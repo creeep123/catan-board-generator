@@ -33,8 +33,7 @@
         }
       ],
       "destination": "https://catanboardgenerator.online/:path*",
-      "permanent": true,
-      "statusCode": 301
+      "permanent": true
     }
   ]
 }
