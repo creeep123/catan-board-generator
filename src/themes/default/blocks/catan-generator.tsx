@@ -219,7 +219,7 @@ function generateValidBoard(mode: BoardMode, rules: RulesConfig): Tile[] {
   return lastTiles;
 }
 
-export default function CatanGenerator({ section }: { section: any }) {
+export function CatanGenerator({ section }: { section: any }) {
   const [mode, setMode] = useState<BoardMode>('normal');
   const [rules, setRules] = useState<RulesConfig>({
     adjacent_6_8: false,

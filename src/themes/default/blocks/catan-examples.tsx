@@ -25,7 +25,7 @@ interface ExampleBoard {
 const SUPABASE_URL = 'https://roruthlntnpjtfardmte.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvcnV0aGxudG5wanRmYXJkbXRlIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjU0OTY3OCwiZXhwIjoyMDg4MTI1Njc4fQ.g2N4GYhKlbjDtTxkVwuNO2Q1rPWD0ui6GnCmrS66LRw';
 
-export default function CatanExamples({ section }: { section: any }) {
+export function CatanExamples({ section }: { section: any }) {
   const [boards, setBoards] = useState<ExampleBoard[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedBoard, setSelectedBoard] = useState<ExampleBoard | null>(null);
