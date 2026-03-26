@@ -232,11 +232,10 @@ export function CatanGenerator({ section }: { section: any }) {
 
   const generateBoard = () => {
     setIsGenerating(true);
-    setTimeout(() => {
-      const newTiles = generateValidBoard(mode, rules);
-      setTiles(newTiles);
-      setIsGenerating(false);
-    }, 100);
+    // Generate immediately to ensure tiles and offsets are synchronized
+    const newTiles = generateValidBoard(mode, rules);
+    setTiles(newTiles);
+    setIsGenerating(false);
   };
 
   useEffect(() => {
@@ -355,22 +354,23 @@ export function CatanGenerator({ section }: { section: any }) {
               isExpanded ? 'w-[800px] h-[700px]' : 'w-[600px] h-[500px]'
             }`}
           >
-            {tiles.map((tile, idx) => (
-              <div
-                key={idx}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  ...(() => {
-                    const style = tileOffsets[idx];
-                    const leftMatch = style.match(/left:([\d.]+)%/);
-                    const topMatch = style.match(/top:([\d.]+)%/);
-                    return {
-                      left: leftMatch ? leftMatch[1] + '%' : '50%',
-                      top: topMatch ? topMatch[1] + '%' : '50%'
-                    };
-                  })()
-                }}
-              >
+            {tiles.map((tile, idx) => {
+              // Skip rendering if offset is not available (prevents crash during mode switch)
+              const style = tileOffsets[idx];
+              if (!style) return null;
+
+              const leftMatch = style.match(/left:([\d.]+)%/);
+              const topMatch = style.match(/top:([\d.]+)%/);
+
+              return (
+                <div
+                  key={idx}
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    left: leftMatch ? leftMatch[1] + '%' : '50%',
+                    top: topMatch ? topMatch[1] + '%' : '50%'
+                  }}
+                >
                 {/* Hexagon */}
                 <div
                   className={`w-16 h-16 flex items-center justify-center relative ${
@@ -408,8 +408,9 @@ export function CatanGenerator({ section }: { section: any }) {
                 <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-600 whitespace-nowrap">
                   {RESOURCE_NAMES[tile.resource]}
                 </div>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
 
           {/* Legend */}
