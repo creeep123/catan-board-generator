@@ -67,17 +67,17 @@ export function CatanExamples({ section }: { section: any }) {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-amber-900 mb-4">
-            示例棋盘配置
+            Example Board Configurations
           </h2>
           <p className="text-amber-700 text-lg">
-            点击查看详细配置，或使用这些预设生成类似棋盘
+            Click to view detailed configurations or use these presets to generate similar boards
           </p>
         </div>
 
         {loading ? (
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
-            <p className="mt-4 text-amber-700">加载示例中...</p>
+            <p className="mt-4 text-amber-700">Loading examples...</p>
           </div>
         ) : (
           <>
@@ -85,9 +85,9 @@ export function CatanExamples({ section }: { section: any }) {
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-amber-800 mb-6 flex items-center gap-2">
                 <span className="bg-amber-600 text-white px-3 py-1 rounded-lg text-sm">
-                  3-4人
+                  3-4 Players
                 </span>
-                经典版配置
+                Classic Configurations
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {classicBoards.map(board => (
@@ -104,9 +104,9 @@ export function CatanExamples({ section }: { section: any }) {
             <div>
               <h3 className="text-2xl font-bold text-amber-800 mb-6 flex items-center gap-2">
                 <span className="bg-orange-600 text-white px-3 py-1 rounded-lg text-sm">
-                  5-6人
+                  5-6 Players
                 </span>
-                扩展版配置
+                Expansion Configurations
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {expansionBoards.map(board => (
@@ -135,10 +135,10 @@ export function CatanExamples({ section }: { section: any }) {
 
 function BoardCard({ board, onClick }: { board: ExampleBoard; onClick: () => void }) {
   const ruleLabels = {
-    adjacent_6_8: '6和8可相邻',
-    adjacent_2_12: '2和12可相邻',
-    same_numbers_touch: '相同数字可相邻',
-    same_resource_touch: '相同资源可相邻'
+    adjacent_6_8: '6 & 8 can touch',
+    adjacent_2_12: '2 & 12 can touch',
+    same_numbers_touch: 'Same numbers can touch',
+    same_resource_touch: 'Same resources can touch'
   };
 
   const activeRules = Object.entries(board.rules_config)
@@ -157,7 +157,7 @@ function BoardCard({ board, onClick }: { board: ExampleBoard; onClick: () => voi
             {board.board_type === 'classic' ? '🎲' : '🎲🎲'}
           </div>
           <p className="text-amber-700 font-medium">
-            {board.board_type === 'classic' ? '经典版' : '扩展版'}
+            {board.board_type === 'classic' ? 'Classic' : 'Expansion'}
           </p>
         </div>
       </div>
@@ -183,7 +183,7 @@ function BoardCard({ board, onClick }: { board: ExampleBoard; onClick: () => voi
           ))}
           {activeRules.length > 2 && (
             <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-              +{activeRules.length - 2} 更多
+              +{activeRules.length - 2} more
             </span>
           )}
         </div>
@@ -192,7 +192,7 @@ function BoardCard({ board, onClick }: { board: ExampleBoard; onClick: () => voi
         {board.is_featured && (
           <div className="mt-4">
             <span className="inline-flex items-center gap-1 px-2 py-1 bg-amber-500 text-white text-xs rounded-full">
-              ⭐ 精选
+              ⭐ Featured
             </span>
           </div>
         )}
@@ -203,10 +203,10 @@ function BoardCard({ board, onClick }: { board: ExampleBoard; onClick: () => voi
 
 function BoardDetailModal({ board, onClose }: { board: ExampleBoard; onClose: () => void }) {
   const ruleLabels = {
-    adjacent_6_8: '6和8可相邻',
-    adjacent_2_12: '2和12可相邻',
-    same_numbers_touch: '相同数字可相邻',
-    same_resource_touch: '相同资源可相邻'
+    adjacent_6_8: '6 & 8 can touch',
+    adjacent_2_12: '2 & 12 can touch',
+    same_numbers_touch: 'Same numbers can touch',
+    same_resource_touch: 'Same resources can touch'
   };
 
   return (
@@ -232,18 +232,18 @@ function BoardDetailModal({ board, onClose }: { board: ExampleBoard; onClose: ()
 
           {/* Board Info */}
           <div className="mb-6">
-            <h4 className="font-bold text-gray-900 mb-3">棋盘信息</h4>
+            <h4 className="font-bold text-gray-900 mb-3">Board Information</h4>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <span className="text-gray-500">类型：</span>
+                <span className="text-gray-500">Type:</span>
                 <span className="font-medium">
-                  {board.board_type === 'classic' ? '经典版 (3-4人)' : '扩展版 (5-6人)'}
+                  {board.board_type === 'classic' ? 'Classic (3-4 Players)' : 'Expansion (5-6 Players)'}
                 </span>
               </div>
               <div>
-                <span className="text-gray-500">模式：</span>
+                <span className="text-gray-500">Mode:</span>
                 <span className="font-medium">
-                  {board.board_config.mode === 'normal' ? '标准' : '扩展'}
+                  {board.board_config.mode === 'normal' ? 'Standard' : 'Expanded'}
                 </span>
               </div>
             </div>
@@ -251,7 +251,7 @@ function BoardDetailModal({ board, onClose }: { board: ExampleBoard; onClose: ()
 
           {/* Rules */}
           <div className="mb-6">
-            <h4 className="font-bold text-gray-900 mb-3">生成规则</h4>
+            <h4 className="font-bold text-gray-900 mb-3">Generation Rules</h4>
             <div className="space-y-2">
               {Object.entries(board.rules_config).map(([key, value]) => (
                 <div
@@ -275,16 +275,16 @@ function BoardDetailModal({ board, onClose }: { board: ExampleBoard; onClose: ()
 
           {/* Board Config */}
           <div className="mb-6">
-            <h4 className="font-bold text-gray-900 mb-3">布局配置</h4>
+            <h4 className="font-bold text-gray-900 mb-3">Layout Configuration</h4>
             <div className="bg-gray-50 rounded-lg p-4 text-sm">
               <div className="mb-2">
-                <span className="text-gray-500">每行方块数：</span>
+                <span className="text-gray-500">Tiles per row:</span>
                 <span className="font-mono">
                   [{board.board_config.tiles_per_row.join(', ')}]
                 </span>
               </div>
               <div>
-                <span className="text-gray-500">中心行：</span>
+                <span className="text-gray-500">Center row:</span>
                 <span className="font-medium">{board.board_config.center_row}</span>
               </div>
             </div>
@@ -303,13 +303,13 @@ function BoardDetailModal({ board, onClose }: { board: ExampleBoard; onClose: ()
               }}
               className="flex-1 px-4 py-2 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors"
             >
-              使用此配置生成
+              Generate with this config
             </button>
             <button
               onClick={onClose}
               className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
             >
-              关闭
+              Close
             </button>
           </div>
         </div>
