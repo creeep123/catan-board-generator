@@ -46,12 +46,12 @@ const RESOURCE_COLORS: Record<ResourceType, string> = {
 };
 
 const RESOURCE_NAMES: Record<ResourceType, string> = {
-  ore: '矿石',
-  brick: '砖块',
-  sheep: '羊毛',
-  wood: '木材',
-  wheat: '小麦',
-  desert: '沙漠'
+  ore: 'Ore',
+  brick: 'Brick',
+  sheep: 'Wool',
+  wood: 'Lumber',
+  wheat: 'Wheat',
+  desert: 'Desert'
 };
 
 // Helper functions
@@ -250,10 +250,10 @@ export function CatanGenerator({ section }: { section: any }) {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-amber-900 mb-4">
-            卡坦岛棋盘生成器
+            Catan Board Generator
           </h2>
           <p className="text-amber-700">
-            生成随机的卡坦岛棋盘，支持经典版和扩展版
+            Generate random Catan boards supporting Classic and Expansion versions
           </p>
         </div>
 
@@ -263,7 +263,7 @@ export function CatanGenerator({ section }: { section: any }) {
             {/* Mode Selection */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                棋盘模式
+                Board Mode
               </label>
               <div className="flex gap-4">
                 <button
@@ -274,7 +274,7 @@ export function CatanGenerator({ section }: { section: any }) {
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
-                  经典版 (3-4人)
+                  Classic (3-4 Players)
                 </button>
                 <button
                   onClick={() => setMode('expanded')}
@@ -284,7 +284,7 @@ export function CatanGenerator({ section }: { section: any }) {
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
-                  扩展版 (5-6人)
+                  Expansion (5-6 Players)
                 </button>
               </div>
             </div>
@@ -292,7 +292,7 @@ export function CatanGenerator({ section }: { section: any }) {
             {/* Rules */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                生成规则
+                Generation Rules
               </label>
               <div className="grid grid-cols-2 gap-2">
                 <label className="flex items-center gap-2 text-sm">
@@ -302,7 +302,7 @@ export function CatanGenerator({ section }: { section: any }) {
                     onChange={(e) => setRules({ ...rules, adjacent_6_8: e.target.checked })}
                     className="rounded"
                   />
-                  允许6和8相邻
+                  Allow 6 & 8 adjacent
                 </label>
                 <label className="flex items-center gap-2 text-sm">
                   <input
@@ -311,7 +311,7 @@ export function CatanGenerator({ section }: { section: any }) {
                     onChange={(e) => setRules({ ...rules, adjacent_2_12: e.target.checked })}
                     className="rounded"
                   />
-                  允许2和12相邻
+                  Allow 2 & 12 adjacent
                 </label>
                 <label className="flex items-center gap-2 text-sm">
                   <input
@@ -320,7 +320,7 @@ export function CatanGenerator({ section }: { section: any }) {
                     onChange={(e) => setRules({ ...rules, same_numbers_touch: e.target.checked })}
                     className="rounded"
                   />
-                  允许相同数字相邻
+                  Allow same numbers adjacent
                 </label>
                 <label className="flex items-center gap-2 text-sm">
                   <input
@@ -329,7 +329,7 @@ export function CatanGenerator({ section }: { section: any }) {
                     onChange={(e) => setRules({ ...rules, same_resource_touch: e.target.checked })}
                     className="rounded"
                   />
-                  允许相同资源相邻
+                  Allow same resources adjacent
                 </label>
               </div>
             </div>
@@ -342,7 +342,7 @@ export function CatanGenerator({ section }: { section: any }) {
               disabled={isGenerating}
               className="px-8 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
             >
-              {isGenerating ? '生成中...' : '重新生成'}
+              {isGenerating ? 'Generating...' : 'Regenerate'}
             </button>
           </div>
         </div>
