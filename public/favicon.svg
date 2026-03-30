@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Hex tile background -->
+  <polygon points="32,2 58,17 58,47 32,62 6,47 6,17" fill="#F59E0B" stroke="#D97706" stroke-width="2"/>
+  <!-- Inner hex pattern -->
+  <polygon points="32,12 48,21 48,39 32,48 16,39 16,21" fill="#FBBF24" stroke="#F59E0B" stroke-width="1.5"/>
+  <!-- Dice dots in center -->
+  <circle cx="32" cy="30" r="3.5" fill="#78350F"/>
+  <circle cx="25" cy="30" r="2.5" fill="#92400E"/>
+  <circle cx="39" cy="30" r="2.5" fill="#92400E"/>
+</svg>
