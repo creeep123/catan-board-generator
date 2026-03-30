@@ -295,7 +295,7 @@ export function CatanGenerator({ section }: { section: any }) {
                 Generation Rules
               </label>
               <div className="grid grid-cols-2 gap-2">
-                <label className="flex items-center gap-2 text-sm">
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-900">
                   <input
                     type="checkbox"
                     checked={rules.adjacent_6_8}
@@ -304,7 +304,7 @@ export function CatanGenerator({ section }: { section: any }) {
                   />
                   Allow 6 & 8 adjacent
                 </label>
-                <label className="flex items-center gap-2 text-sm">
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-900">
                   <input
                     type="checkbox"
                     checked={rules.adjacent_2_12}
@@ -313,7 +313,7 @@ export function CatanGenerator({ section }: { section: any }) {
                   />
                   Allow 2 & 12 adjacent
                 </label>
-                <label className="flex items-center gap-2 text-sm">
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-900">
                   <input
                     type="checkbox"
                     checked={rules.same_numbers_touch}
@@ -322,7 +322,7 @@ export function CatanGenerator({ section }: { section: any }) {
                   />
                   Allow same numbers adjacent
                 </label>
-                <label className="flex items-center gap-2 text-sm">
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-900">
                   <input
                     type="checkbox"
                     checked={rules.same_resource_touch}
@@ -348,7 +348,7 @@ export function CatanGenerator({ section }: { section: any }) {
         </div>
 
         {/* Board */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="bg-white rounded-lg shadow-lg p-8 pb-12">
           <div
             className={`relative mx-auto ${
               isExpanded ? 'w-[800px] h-[700px]' : 'w-[600px] h-[500px]'
@@ -405,7 +405,7 @@ export function CatanGenerator({ section }: { section: any }) {
                 </div>
 
                 {/* Resource label (small) */}
-                <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-600 whitespace-nowrap">
+                <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-600 whitespace-nowrap pointer-events-none z-10">
                   {RESOURCE_NAMES[tile.resource]}
                 </div>
                 </div>
