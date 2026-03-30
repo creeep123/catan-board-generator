@@ -354,8 +354,8 @@ export function CatanGenerator({ section }: { section: any }) {
               isExpanded ? 'w-[800px] h-[700px]' : 'w-[600px] h-[500px]'
             }`}
           >
+            {/* Hex tiles */}
             {tiles.map((tile, idx) => {
-              // Skip rendering if offset is not available (prevents crash during mode switch)
               const style = tileOffsets[idx];
               if (!style) return null;
 
@@ -371,43 +371,61 @@ export function CatanGenerator({ section }: { section: any }) {
                     top: topMatch ? topMatch[1] + '%' : '50%'
                   }}
                 >
-                {/* Hexagon */}
+                  {/* Hexagon */}
+                  <div
+                    className={`${isExpanded ? 'w-14 h-14' : 'w-16 h-16'} flex items-center justify-center relative`}
+                    style={{
+                      backgroundColor: RESOURCE_COLORS[tile.resource],
+                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+                    }}
+                  >
+                    {/* Number chit */}
+                    {tile.chit && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div
+                          className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg ${
+                            tile.chit === '6' || tile.chit === '8'
+                              ? 'bg-red-600 text-white'
+                              : 'bg-amber-100 text-amber-900'
+                          }`}
+                        >
+                          {tile.chit}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Desert indicator */}
+                    {tile.resource === 'desert' && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-2xl">🏜️</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Resource labels - rendered separately to avoid stacking context isolation from tile transforms */}
+            {tiles.map((tile, idx) => {
+              const style = tileOffsets[idx];
+              if (!style) return null;
+
+              const leftMatch = style.match(/left:([\d.]+)%/);
+              const topMatch = style.match(/top:([\d.]+)%/);
+              const labelOffset = isExpanded ? 33 : 38;
+
+              return (
                 <div
-                  className={`w-16 h-16 flex items-center justify-center relative ${
-                    isExpanded ? 'w-14 h-14' : 'w-16 h-16'
-                  }`}
+                  key={`label-${idx}`}
+                  className="absolute text-xs font-medium text-gray-600 whitespace-nowrap pointer-events-none"
                   style={{
-                    backgroundColor: RESOURCE_COLORS[tile.resource],
-                    clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+                    left: leftMatch ? leftMatch[1] + '%' : '50%',
+                    top: topMatch ? `calc(${topMatch[1]}% + ${labelOffset}px)` : '50%',
+                    transform: 'translateX(-50%)',
+                    zIndex: 20,
                   }}
                 >
-                  {/* Number chit */}
-                  {tile.chit && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg ${
-                          tile.chit === '6' || tile.chit === '8'
-                            ? 'bg-red-600 text-white'
-                            : 'bg-amber-100 text-amber-900'
-                        }`}
-                      >
-                        {tile.chit}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Desert indicator */}
-                  {tile.resource === 'desert' && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-2xl">🏜️</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Resource label (small) */}
-                <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 text-xs font-medium text-gray-600 whitespace-nowrap pointer-events-none z-10">
                   {RESOURCE_NAMES[tile.resource]}
-                </div>
                 </div>
               );
             })}
