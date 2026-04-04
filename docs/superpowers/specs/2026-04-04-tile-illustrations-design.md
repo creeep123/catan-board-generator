@@ -27,13 +27,13 @@ Add flat-style SVG illustrations for each resource type, rendered as inline Reac
 Contains:
 - `TileIllustration({ resource, size })` — dispatcher component that renders the correct SVG based on resource type
 - 6 illustration components: `OreIllustration`, `BrickIllustration`, `SheepIllustration`, `WoodIllustration`, `WheatIllustration`, `DesertIllustration`
-- Each component accepts a `size` number prop (16 for normal mode, 14 for expanded mode)
+- Each component accepts a `size` number prop in Tailwind size units (16 = 4rem/64px for normal mode, 14 = 3.5rem/56px for expanded mode)
 
 ### Modified file: `src/themes/default/blocks/catan-generator.tsx`
 
 Changes:
 1. Import `TileIllustration` from `tile-illustrations.tsx`
-2. Replace `RESOURCE_COLORS` (solid colors) with gradient color pairs: `{ from: string, to: string }`
+2. Add `RESOURCE_GRADIENTS` with gradient color pairs: `{ from: string, to: string }`; keep `RESOURCE_COLORS` using the `from` color for the legend swatches
 3. Hex div background changes from solid color to `linear-gradient`
 4. Add `TileIllustration` as an absolutely-positioned SVG layer inside each hex div, below the chit
 5. Remove desert emoji, replace with `DesertIllustration`
@@ -56,6 +56,7 @@ Design principles:
 - Colors have more depth than current flat colors but maintain overall palette coherence
 - Simple lines, no strokes or complex details — flat illustration style
 - SVG uses `<path>` and basic shapes only, no external dependencies
+- Decorative SVGs get `aria-hidden="true"` for accessibility
 
 ## Rendering Structure (Before → After)
 
@@ -69,9 +70,10 @@ hex div (clip-path, solid color background)
 After:
 ```
 hex div (clip-path, linear-gradient background)
-  ├── TileIllustration SVG (absolute, opacity 0.85, pointer-events-none)
-  ├── number chit (circular badge, unchanged)
-  └── DesertIllustration SVG (replaces emoji for desert)
+  ├── TileIllustration SVG (absolute, opacity 0.85, pointer-events-none, aria-hidden)
+  │     └── dispatches to one of: OreIllustration | BrickIllustration |
+  │         SheepIllustration | WoodIllustration | WheatIllustration | DesertIllustration
+  └── number chit (circular badge, unchanged)
 ```
 
 ## Unchanged Components
