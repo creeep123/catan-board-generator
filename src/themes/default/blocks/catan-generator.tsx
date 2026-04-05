@@ -398,10 +398,10 @@ export function CatanGenerator({ section }: { section: any }) {
                     {tile.chit && (
                       <div className="absolute inset-0 flex items-center justify-center z-10">
                         <div
-                          className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-sm ${
+                          className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md backdrop-blur-[1px] ${
                             tile.chit === '6' || tile.chit === '8'
-                              ? 'bg-red-600 text-white'
-                              : 'bg-amber-100 text-amber-900'
+                              ? 'bg-red-600/80 text-white'
+                              : 'bg-amber-100/80 text-amber-900'
                           }`}
                         >
                           {tile.chit}
