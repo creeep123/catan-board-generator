@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { TileIllustration } from './tile-illustrations';
 
 // Types
 type BoardMode = 'normal' | 'expanded';
@@ -37,12 +38,21 @@ const PROB_DOTS: Record<number, string> = {
 };
 
 const RESOURCE_COLORS: Record<ResourceType, string> = {
-  ore: '#8B7355',
-  brick: '#CD853F',
-  sheep: '#90EE90',
-  wood: '#228B22',
-  wheat: '#F0E68C',
-  desert: '#F4A460'
+  ore: '#5D4037',
+  brick: '#BF360C',
+  sheep: '#689F38',
+  wood: '#1B5E20',
+  wheat: '#F9A825',
+  desert: '#E0C068'
+};
+
+const RESOURCE_GRADIENTS: Record<ResourceType, { from: string; to: string }> = {
+  wood: { from: '#1B5E20', to: '#2E7D32' },
+  sheep: { from: '#689F38', to: '#7CB342' },
+  wheat: { from: '#F9A825', to: '#E8B830' },
+  brick: { from: '#BF360C', to: '#C75B39' },
+  ore: { from: '#5D4037', to: '#7A6B5D' },
+  desert: { from: '#E0C068', to: '#E8C872' }
 };
 
 const RESOURCE_NAMES: Record<ResourceType, string> = {
@@ -373,17 +383,22 @@ export function CatanGenerator({ section }: { section: any }) {
                 >
                   {/* Hexagon */}
                   <div
-                    className={`${isExpanded ? 'w-14 h-14' : 'w-16 h-16'} flex items-center justify-center relative`}
+                    className={`${isExpanded ? 'w-14 h-14' : 'w-16 h-16'} flex items-center justify-center relative overflow-hidden`}
                     style={{
-                      backgroundColor: RESOURCE_COLORS[tile.resource],
+                      background: `linear-gradient(135deg, ${RESOURCE_GRADIENTS[tile.resource].from}, ${RESOURCE_GRADIENTS[tile.resource].to})`,
                       clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
                     }}
                   >
+                    {/* Resource illustration */}
+                    <div className="absolute inset-0 opacity-[0.85] pointer-events-none">
+                      <TileIllustration resource={tile.resource} />
+                    </div>
+
                     {/* Number chit */}
                     {tile.chit && (
-                      <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
                         <div
-                          className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg ${
+                          className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-sm ${
                             tile.chit === '6' || tile.chit === '8'
                               ? 'bg-red-600 text-white'
                               : 'bg-amber-100 text-amber-900'
@@ -391,13 +406,6 @@ export function CatanGenerator({ section }: { section: any }) {
                         >
                           {tile.chit}
                         </div>
-                      </div>
-                    )}
-
-                    {/* Desert indicator */}
-                    {tile.resource === 'desert' && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-2xl">🏜️</span>
                       </div>
                     )}
                   </div>
