@@ -361,7 +361,7 @@ export function CatanGenerator({ section }: { section: any }) {
         <div className="bg-white rounded-lg shadow-lg p-8 pb-12">
           <div
             className={`relative mx-auto ${
-              isExpanded ? 'w-[800px] h-[700px]' : 'w-[600px] h-[500px]'
+              isExpanded ? 'w-[800px] h-[700px]' : 'w-[500px] h-[440px]'
             }`}
           >
             {/* Hex tiles */}
@@ -383,7 +383,7 @@ export function CatanGenerator({ section }: { section: any }) {
                 >
                   {/* Hexagon */}
                   <div
-                    className={`${isExpanded ? 'w-14 h-14' : 'w-16 h-16'} flex items-center justify-center relative overflow-hidden`}
+                    className={`${isExpanded ? 'w-16 h-16' : 'w-20 h-20'} flex items-center justify-center relative overflow-hidden`}
                     style={{
                       background: `linear-gradient(135deg, ${RESOURCE_GRADIENTS[tile.resource].from}, ${RESOURCE_GRADIENTS[tile.resource].to})`,
                       clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
@@ -394,18 +394,18 @@ export function CatanGenerator({ section }: { section: any }) {
                       <TileIllustration resource={tile.resource} />
                     </div>
 
-                    {/* Number chit */}
+                    {/* Number chit - no background circle, just number with text shadow */}
                     {tile.chit && (
                       <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div
-                          className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow-md backdrop-blur-[1px] ${
+                        <span
+                          className={`font-extrabold text-base drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] ${
                             tile.chit === '6' || tile.chit === '8'
-                              ? 'bg-red-600/80 text-white'
-                              : 'bg-amber-100/80 text-amber-900'
+                              ? 'text-red-600'
+                              : 'text-amber-100'
                           }`}
                         >
                           {tile.chit}
-                        </div>
+                        </span>
                       </div>
                     )}
                   </div>
